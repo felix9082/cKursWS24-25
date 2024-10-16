@@ -17,7 +17,7 @@ Erstellt am Mi 14.10.2024 14:54 Uhr
 
 Font für den Titel: https://patorjk.com/software/taag/#p=testall&f=BlurVision%20ASCII&t=C%20KURS Letzter Zurgriff: am Mi 14.10.2024 14:58 Uhr
 
-Jeder Code wird mit folgendem Wasserzeichen für die identifizierung gekennzeichnet
+Jeder Code wird in VS-Code, mithilfe der C, C#, und C++ add-on's Bearbeitet und mit folgendem Wasserzeichen für bessere Autor-Identifizierung gekennzeichnet
 
 /*
 
