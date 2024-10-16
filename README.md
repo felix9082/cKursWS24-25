@@ -1,12 +1,13 @@
 # cKursWS24-25
 
+/*
  ██████╗    ██╗  ██╗██╗   ██╗██████╗ ███████╗
 ██╔════╝    ██║ ██╔╝██║   ██║██╔══██╗██╔════╝
 ██║         █████╔╝ ██║   ██║██████╔╝███████╗
 ██║         ██╔═██╗ ██║   ██║██╔══██╗╚════██║
 ╚██████╗    ██║  ██╗╚██████╔╝██║  ██║███████║
  ╚═════╝    ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
-                                             
+ */                                            
                                                                                               
 Repository für das Backup von Hausaufgaben im C-Kurs der Tu-Berlin im Rahmen des Moduls: "Einführung in die Programmierung"
 
