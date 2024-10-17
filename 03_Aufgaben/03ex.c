@@ -59,8 +59,28 @@ Aufgabe 1b:
 
 Geben Sie in dieser Funktion die Summe der ersten `n` natürlichen Zahlen (exklusive der Null) zurück, die durch `l` und durch `m` teilbar sind.
 */
+
 int sum_of_doubly_divisibles(int n, int l, int m) {
-    return 0;
+
+    int summeN = 0;                                     // Summe der ersten n Zahlen...
+    int bgz = 0;                                        // Menge an bereits gefundenen Zahlen
+    int zpz = 1;                                        // Momentan zu prüfende Zahl
+
+    while (bgz < n)                                     // Solange noch nicht n zahlen gefunden wurden
+    {
+        if (zpz % l == 0)                               // Prüfe ob die zu prüfende Zashl durch l teilbar ist
+        {
+            if (zpz % m == 0)                           // Prüfe ob die zu prüfende Zashl durch m teilbar ist
+            {
+                summeN = summeN + zpz;                  // Wenn beide bedingungen erfüllt: Addiere die geprüfte Zahl zur Summe der ersten n Zahlen...
+                bgz++;                                  // und inkrementiere die Menge der Bereits gefundenen Zahlen um 1
+            }
+            
+        }
+        zpz++;                                          // inkrementiere die zu prüfende Zahl um 1 (schaue nach der Nächsten Zahl
+    }   
+
+    return summeN; 
 }
 
 /*
@@ -79,9 +99,9 @@ Canvas first_canvas_exercise(Canvas c) {
     Die linke untere Ecke der Canvas ist der Koordinatenursprung, dort sind die x- und die y-Koordinate jeweils `0`.
     Nach rechts steigen die x-Koordinaten, nach oben die y-Koordinaten.
     */
-    c = canvas_set_black(c, 0, 5);
-    c = canvas_set_black(c, 2, 0);
-    c = canvas_set_black(c, 12, 1);
+    c = canvas_set_black(c, 1, 5);
+    c = canvas_set_black(c, 2, 1);
+    c = canvas_set_black(c, 13, 4);
 
     /*
     Diese drei Funktionsaufrufe hier drüber färben drei unterschiedliche Pixel der Canvas schwarz.
@@ -123,6 +143,12 @@ die Breite und Höhe zurückgegeben.
 Hinweis: Koordinaten beginnen bei `0`, nicht bei `1`.
 */
 Canvas color_corners(Canvas c) {
+
+    canvas_set_black(c, 0, 0);                                      // unten links
+    canvas_set_black(c, 0, canvas_height(c)-1);                     // oben links
+    canvas_set_black(c, canvas_width(c)-1, 0);                      // unten rechts
+    canvas_set_black(c, canvas_width(c)-1, canvas_height(c)-1);     // oben rechts
+
     return c;
 }
 
@@ -131,6 +157,17 @@ Aufgabe 2c:
 Färben Sie alle Pixel der Canvas schwarz.
 */
 Canvas paint_it_black(Canvas c) {
+
+    for (int y = 0; y < canvas_height(c); y++)                      // durchlaufe alle existierenden y Koordinaten
+    {
+        for (int x = 0; x < canvas_width(c); x++)                   // durchlaufe alle existierenden x Koordinaten
+        {
+            canvas_set_black(c, x, y);                              // Färbe den Aktuellen Pixel schwarz ein
+        }
+        
+    }
+    
+
     return c;
 }
 
@@ -142,6 +179,20 @@ und schauen sich das erwartete Ergebnis an).
 Falls eine Reihe nicht breit genug ist, färben Sie alle Pixel dieser Reihe schwarz.
 */
 Canvas descending_diagonal(Canvas c) {
+    
+    for (int y = canvas_height(c)-1; y >= 0; y--)                           // Durchläuft alle vertikalen Pixel
+    {
+        for (int x = 0; x < canvas_height(c)-y; x++)                        // Durchläuft alle horizontalen Pixel
+        {
+            if (x <= canvas_width(c)-1 && y <= canvas_height(c)-1)          // Überprüfung ob einzufärbender Pixel "Legal" ist
+            {
+                canvas_set_black(c, x, y);                                  // Einfärbung des aktuellen Pixeld (falls "Legal")
+            }
+            
+        }
+        
+    }
+    
     return c;
 }
 
@@ -152,6 +203,21 @@ Koordinaten `(x, y)`. Die Breite des Rechtecks ist `width`, und die Höhe ist `h
 auf die Canvas passt, sollen einfach die Teile ignoriert werden welche außerhalb liegen würden.
 */
 Canvas draw_rectangle(Canvas c, int x, int y, int width, int height) {
+
+    for (int yKoordinate = y; yKoordinate > 0 + y - height; yKoordinate--)          // Definition der einzufärbenden y Koordinate; Abbruchbedingung: Unterste Koordinate des Rechtecks erreicht              
+    {
+        for (int xKoordinate = x; xKoordinate < 0 + x + width; xKoordinate++)       // Definition der einzufärbenden x Koordinate; Abbruchbedingung; "Rechteste" Koordinate erreicht 
+        {
+            //Validitätsprüfung des einzufärbenden Pixels
+            if (xKoordinate <= canvas_width(c)-1 && yKoordinate <= canvas_height(c)-1 && xKoordinate >= 0 && yKoordinate >= 0)
+            {
+            canvas_set_black(c, xKoordinate, yKoordinate);                          // Einfärbung der Koordinate unter legalitäts-(/existens)bedingung
+            }
+
+        }
+
+    }    
+
     return c;
 }
 
@@ -165,5 +231,53 @@ Tipp: Ob Sie diese Funktion von Grund auf implementieren oder `draw_rectangle` v
 Wir empfehlen beides auszuprobieren und selbst zu entscheiden welche Lösung Sie eleganter finden.
 */
 Canvas draw_rectangle_via_corners(Canvas c, int x0, int y0, int x1, int y1) {
+    
+    int width = 0 - x0 + x1;                                                    // Berechnung der Rechtecksbreite mithilde neuer Parameter
+    int height = 0 - y1 + y0;                                                   // Berechnung der Rechteckshöhe mithilfe neuer Parameter
+
+    draw_rectangle(c, x0, y0, width + 1, height + 1);                           // Funktionsaufruf mit berechneten height- und width-parametern
+    
     return c;
 }
+
+
+
+
+
+
+
+
+
+/*
+
+                ,'\   |\
+               / /.:  ;;
+              / :'|| //
+             (| | ||;'
+             / ||,;'-.._
+            : ,;,`';:.--`
+            |:|'`-(\\
+            ::: \-'\`'
+             \\\ \,-`.
+              `'\ `.,-`-._      ,-._
+       ,-.       \  `.,-' `-.  / ,..`.
+      / ,.`.      `.  \ _.-' \',: ``\ \
+     / / :..`-'''``-)  `.   _.:''  ''\ \
+    : :  '' `-..''`/    |-''  |''  '' \ \
+    | |  ''   ''  :     |__..-;''  ''  : :
+    | |  ''   ''  |     ;    / ''  ''  | |
+    | |  ''   ''  ;    /--../_ ''_ '' _| |
+    | |  ''  _;:_/    :._  /-.'',-.'',-. |
+    : :  '',;'`;/     |_ ,(   `'   `'   \|
+     \ \  \(   /\     :,'  \
+      \ \.'/  : /    ,)    /
+       \ ':   ':    / \   :
+        `.\    :   :\  \  |
+                \  | `. \ |..-_
+                 ) |.  `/___-.-`
+               ,'  -.'.  `. `'        _,)
+               \'\(`.\ `._ `-..___..-','
+           FLX    `'      ``-..___..-'
+
+
+*/
