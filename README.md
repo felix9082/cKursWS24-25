@@ -19,6 +19,11 @@ Font für den Titel: https://patorjk.com/software/taag/#p=testall&f=BlurVision%2
 
 Jeder Code wird in VS-Code, mithilfe der C, C#, und C++ add-on's Bearbeitet und mit folgendem Wasserzeichen für bessere Autor-Identifizierung gekennzeichnet
 
+Die hier hochgeadenen Aufgaben Bestehen alle Tests die durch die aufgaben durchgeführt werden:
+
+   Für die Aufgabe: Blatt 4 Aufgabe 2a (Hailstone Number) wurde keine Testfunktion implementiert, es wurde mit einem Hailstone Calculator getestet. Sie müsste stimmen.
+
+ 
 /*
 
                 ,'\   |\
