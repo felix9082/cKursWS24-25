@@ -23,6 +23,7 @@ Die hier hochgeadenen Aufgaben Bestehen alle Tests die durch die aufgaben durchg
 
    Für die Aufgabe: Blatt 4 Aufgabe 2a (Hailstone Number) wurde keine Testfunktion implementiert, es wurde mit einem Hailstone Calculator getestet. Sie müsste stimmen.
 
+   Di 31/Okt/24: Für die Aufgabe 08: Der implementierte Sortieralgorithmus für die Arrays ist Bubblesort, Prof sagt in der 01. Vorlesung Quicksort ist effizient aber mir fehlt momentan das Verständnis besagten Sortieralgorithmus nachhaltig zu implementieren
  
 /*
 
