@@ -23,11 +23,14 @@ Die hier hochgeadenen Aufgaben Bestehen alle Tests die durch die aufgaben durchg
 
    Für die Aufgabe: Blatt 4 Aufgabe 2a (Hailstone Number) wurde keine Testfunktion implementiert, es wurde mit einem Hailstone Calculator getestet. Sie müsste stimmen.
 
-   Di 31/Okt/24: Für die Aufgabe 08: Der implementierte Sortieralgorithmus für die Arrays ist Bubblesort, Prof sagt in der 01. Vorlesung Quicksort ist effizient aber mir fehlt momentan das Verständnis besagten Sortieralgorithmus nachhaltig zu implementieren
+Di 31/Okt/24:
+Für die Aufgabe 08: Der implementierte Sortieralgorithmus für die Arrays ist Bubblesort, Prof sagt in der 01. Vorlesung Quicksort ist effizient aber mir fehlt momentan das Verständnis besagten Sortieralgorithmus nachhaltig zu implementieren
 
 Mi 20/Nov/2024:
-
 Die Hausaufgaben sind Abgeschlossen nur noch die 09_Aufgaben hat kleine Problemchen, Das verzeichnis lässt sich noch nicht ganz hochladen und es existiert ein super kleiner Memory leak von ein paar bytes. Bei Zeiten komme ich auf diese Probleme nochmal Zurück.
+
+Fr 22/Nov/2024:
+Jetzt sind die Hausaufgaben Vollständig hochgeladen und bestehen Alle tests bis auf ein mir unersichtlichen memory leak (09_Aufgaben). Die 09_Aufgaben sind als gesamtpaket (Ordner) hochgeladen und die 10_Aufgaben sind auch beendet und hochgeladen.
 
  
 /*
